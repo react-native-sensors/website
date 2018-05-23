@@ -9,23 +9,23 @@
 
 <span class="hljs-keyword">let</span> accelerationObservable = <span class="hljs-literal">null</span>;
 <span class="hljs-keyword">new</span> Accelerometer({
-    <span class="hljs-attr">updateInterval</span>: <span class="hljs-number">400</span> <span class="hljs-comment">// defaults to 100ms</span>
+  <span class="hljs-attr">updateInterval</span>: <span class="hljs-number">400</span> <span class="hljs-comment">// defaults to 100ms</span>
 })
-    .then(<span class="hljs-function"><span class="hljs-params">observable</span> =&gt;</span> {
-        accelerationObservable = observable;
+  .then(<span class="hljs-function"><span class="hljs-params">observable</span> =&gt;</span> {
+    accelerationObservable = observable;
 
-        <span class="hljs-comment">// Normal RxJS functions</span>
-        accelerationObservable
-            .map(<span class="hljs-function">(<span class="hljs-params">{ x, y, z }</span>) =&gt;</span> x + y + z)
-            .filter(<span class="hljs-function"><span class="hljs-params">speed</span> =&gt;</span> speed &gt; <span class="hljs-number">20</span>)
-            .subscribe(<span class="hljs-function"><span class="hljs-params">speed</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`You moved your phone with <span class="hljs-subst">${speed}</span>`</span>));
-    })
-    .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> {
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The sensor is not available"</span>);
-    });
+    <span class="hljs-comment">// Normal RxJS functions</span>
+    accelerationObservable
+      .map(<span class="hljs-function">(<span class="hljs-params">{ x, y, z }</span>) =&gt;</span> x + y + z)
+      .filter(<span class="hljs-function"><span class="hljs-params">speed</span> =&gt;</span> speed &gt; <span class="hljs-number">20</span>)
+      .subscribe(<span class="hljs-function"><span class="hljs-params">speed</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`You moved your phone with <span class="hljs-subst">${speed}</span>`</span>));
+  })
+  .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The sensor is not available"</span>);
+  });
 
 setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    accelerationObservable.stop();
+  accelerationObservable.stop();
 }, <span class="hljs-number">1000</span>);
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="GettingStarted.html">← Getting Started with React Native Sensors</a><a class="docs-next button" href="Usage.Decorator.html">The Decorator Syntax of React Native Sensors →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2018 Daniel Schmidt.</section></footer></div></body></html>

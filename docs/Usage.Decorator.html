@@ -10,34 +10,34 @@
 <span class="hljs-keyword">import</span> { decorator <span class="hljs-keyword">as</span> sensors } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-native-sensors"</span>;
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent</span> </span>{
-    <span class="hljs-comment">// no lifecycle needed</span>
-    render() {
-        <span class="hljs-keyword">const</span> { sensorsFound, Accelerometer, Gyroscope } = <span class="hljs-keyword">this</span>.props;
+  <span class="hljs-comment">// no lifecycle needed</span>
+  render() {
+    <span class="hljs-keyword">const</span> { sensorsFound, Accelerometer, Gyroscope } = <span class="hljs-keyword">this</span>.props;
 
-        <span class="hljs-keyword">if</span> (!Accelerometer || !Gyroscope) {
-            <span class="hljs-comment">// One of the sensors is still initializing</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
-        }
-
-        <span class="hljs-keyword">return</span> (
-            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{styles.container}</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{styles.welcome}</span>&gt;</span>
-                    {(sensorsFound["Accelerometer"] &amp;&amp;
-                        `Acceleration has value: ${Accelerometer}`) ||
-                        "Acceleration is not available"}
-                    {(sensorsFound["Gyroscope"] &amp;&amp; `Gyro has value: ${Gyroscope}`) ||
-                        "Gyro is not available"}
-                <span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></span>
-        );
+    <span class="hljs-keyword">if</span> (!Accelerometer || !Gyroscope) {
+      <span class="hljs-comment">// One of the sensors is still initializing</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
     }
+
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{styles.container}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{styles.welcome}</span>&gt;</span>
+          {(sensorsFound["Accelerometer"] &amp;&amp;
+            `Acceleration has value: ${Accelerometer}`) ||
+            "Acceleration is not available"}
+          {(sensorsFound["Gyroscope"] &amp;&amp; `Gyro has value: ${Gyroscope}`) ||
+            "Gyro is not available"}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></span>
+    );
+  }
 }
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> sensors({
-    <span class="hljs-attr">Accelerometer</span>: {
-        <span class="hljs-attr">updateInterval</span>: <span class="hljs-number">300</span> <span class="hljs-comment">// optional</span>
-    },
-    <span class="hljs-attr">Gyroscope</span>: <span class="hljs-literal">true</span>
+  <span class="hljs-attr">Accelerometer</span>: {
+    <span class="hljs-attr">updateInterval</span>: <span class="hljs-number">300</span> <span class="hljs-comment">// optional</span>
+  },
+  <span class="hljs-attr">Gyroscope</span>: <span class="hljs-literal">true</span>
 })(MyComponent);
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="Usage.RxJS.html">← The RxJS Syntax of React Native Sensors</a><a class="docs-next button" href="API.html">API →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2018 Daniel Schmidt.</section></footer></div></body></html>
