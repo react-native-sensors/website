@@ -5,5 +5,5 @@
 <url> <loc>https://react-native-sensors.github.io/docs/BlogPosts.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://react-native-sensors.github.io/docs/BlogPosts.html" /> </url>
 <url> <loc>https://react-native-sensors.github.io/docs/Changelog.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://react-native-sensors.github.io/docs/Changelog.html" /> </url>
 <url> <loc>https://react-native-sensors.github.io/docs/Installation.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://react-native-sensors.github.io/docs/Installation.html" /> </url>
-<url> <loc>https://react-native-sensors.github.io/docs/Usage.RxJS.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://react-native-sensors.github.io/docs/Usage.RxJS.html" /> </url>
+<url> <loc>https://react-native-sensors.github.io/docs/Usage.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://react-native-sensors.github.io/docs/Usage.html" /> </url>
 </urlset>
