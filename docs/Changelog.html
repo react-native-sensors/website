@@ -28,25 +28,44 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Changelog</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="version-5"></a><a href="#version-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Version 5</h2>
-<h3><a class="anchor" aria-hidden="true" id="500"></a><a href="#500" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.0.0</h3>
-<p>In this release we defined a whole new API that does not rely on promises anymore.</p>
-<h4><a class="anchor" aria-hidden="true" id="rxjs"></a><a href="#rxjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RxJS</h4>
-<p>To migrate see the following diff:</p>
-<pre><code class="hljs css language-diff">import { Accelerometer, Gyroscope } from "react-native-sensors";
+<h3><a class="anchor" aria-hidden="true" id="510"></a><a href="#510" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.1.0</h3>
+<p>We added experimental support for the Barometer, it can be used like this:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { barometer } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-native-sensors"</span>;
 
+<span class="hljs-keyword">const</span> subscription = barometer.subscribe(<span class="hljs-function">(<span class="hljs-params">{ pressure }</span>) =&gt;</span>
+  <span class="hljs-built_in">console</span>.log({ pressure })
+);
+</code></pre>
+<p>Please help us improve the quality by using this sensor and giving feedback!</p>
+<h3><a class="anchor" aria-hidden="true" id="500"></a><a href="#500" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.0.0</h3>
+<p>In this release we defined a whole new API that does not rely on promises anymore.
+To migrate please also update RxJS to a version greater than 6.</p>
+<h4><a class="anchor" aria-hidden="true" id="rxjs"></a><a href="#rxjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RxJS</h4>
+<pre><code class="hljs css language-diff"><span class="hljs-deletion">- import { Accelerometer, Gyroscope } from "react-native-sensors";</span>
+<span class="hljs-addition">+ import {</span>
+<span class="hljs-addition">+   accelerometer, // direct access to the observables</span>
+<span class="hljs-addition">+   gyroscope,</span>
+<span class="hljs-addition">+   setUpdateIntervalForType, // set update interval globally</span>
+<span class="hljs-addition">+   SensorTypes</span>
+<span class="hljs-addition">+ } from "react-native-sensors";</span>
+
+<span class="hljs-addition">+ // update to RxJS &gt;= 6</span>
+<span class="hljs-addition">+ import { map, filter } from "rxjs/operators";</span>
 <span class="hljs-deletion">- let accelerationObservable = null;</span>
 <span class="hljs-deletion">- new Accelerometer({</span>
-<span class="hljs-addition">+ const accelerationObservable = new Accelerometer({</span>
-  updateInterval: 400 // defaults to 100ms
-})
+<span class="hljs-deletion">-  updateInterval: 400 // defaults to 100ms</span>
+<span class="hljs-deletion">- })</span>
 <span class="hljs-deletion">-  .then(observable =&gt; {</span>
 <span class="hljs-deletion">-    accelerationObservable = observable;</span>
 
     // Normal RxJS functions
 <span class="hljs-deletion">-    accelerationObservable</span>
-<span class="hljs-addition">+   const subscription = accelerationObservable</span>
-      .map(({ x, y, z }) =&gt; x + y + z)
-      .filter(speed =&gt; speed &gt; 20)
+<span class="hljs-deletion">-      .map(({ x, y, z }) =&gt; x + y + z)</span>
+<span class="hljs-deletion">-      .filter(speed =&gt; speed &gt; 20)</span>
+<span class="hljs-addition">+   const subscription = accelerometer.pipe(</span>
+<span class="hljs-addition">+         map(({ x, y, z }) =&gt; x + y + z)</span>
+<span class="hljs-addition">+         filter(speed =&gt; speed &gt; 20)</span>
+<span class="hljs-addition">+       )</span>
 <span class="hljs-deletion">-      .subscribe(speed =&gt; console.log(`You moved your phone with ${speed}`));</span>
 <span class="hljs-addition">+      .subscribe(speed =&gt; console.log(`You moved your phone with ${speed}`), error =&gt; {</span>
 <span class="hljs-addition">+        console.log("The sensor is not available");</span>
@@ -62,43 +81,8 @@ setTimeout(() =&gt; {
 }, 1000);
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="decorator"></a><a href="#decorator" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Decorator</h4>
-<pre><code class="hljs css language-diff">import React, { Component } from "react";
-import { Text, View } from "react-native";
-import {
-  decorator as sensors,
-  setUpdateIntervalForType,
-  SensorTypes
-} from "react-native-sensors";
-
-setUpdateIntervalForType(SensorTypes.Accelerometer, 400);
-
-function MyComponent({ sensorsFound, Accelerometer, Gyroscope }) {
-  if (!Accelerometer || !Gyroscope) {
-    // One of the sensors is still initializing
-    return null;
-  }
-
-  return (
-    &lt;View style={styles.container}&gt;
-      &lt;Text style={styles.welcome}&gt;
-        {(sensorsFound["Accelerometer"] &amp;&amp;
-          `Acceleration has value: ${Accelerometer}`) ||
-          "Acceleration is not available"}
-        {(sensorsFound["Gyroscope"] &amp;&amp; `Gyro has value: ${Gyroscope}`) ||
-          "Gyro is not available"}
-      &lt;/Text&gt;
-    &lt;/View&gt;
-  );
-}
-
-export default sensors({
-<span class="hljs-deletion">-  Accelerometer: {</span>
-<span class="hljs-deletion">-    updateInterval: 400</span>
-<span class="hljs-deletion">-  },</span>
-<span class="hljs-addition">+ Accelerometer: true,</span>
-  Gyroscope: true
-})(MyComponent);
-</code></pre>
+<p>We dropped support for the decorator syntax as it added a lot of testing surface.
+Please use libraries like <a href="https://github.com/acdlite/recompose">recompose</a> with <code>componentFromStream</code> to fill the gap. If you need help with this feel free to open an issue and we will provide more context and guidance.</p>
 <h2><a class="anchor" aria-hidden="true" id="version-4"></a><a href="#version-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Version 4</h2>
 <ul>
 <li><a href="https://github.com/react-native-sensors/react-native-sensors/pull/157">Do not convert errors to return values</a></li>
