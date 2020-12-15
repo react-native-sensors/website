@@ -28,24 +28,17 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Usage</h1></header><article><div><span><p>You can access your sensor data through a <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS Observable</a>. This way you have the maximum of control over your data stream. You can add the values up, filter them, only react if a certain value is reached: You have the choice. Here is a small example showing the relatively small API interface. If you would like to learn more, please see the <a href="/docs/API.html">API specification</a>.</p>
-<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> {
-  accelerometer,
-  gyroscope,
-  setUpdateIntervalForType,
-  SensorTypes
-} <span class="hljs-keyword">from</span> <span class="hljs-string">"react-native-sensors"</span>;
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { accelerometer, gyroscope, setUpdateIntervalForType, SensorTypes } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-native-sensors"</span>;
 <span class="hljs-keyword">import</span> { map, filter } <span class="hljs-keyword">from</span> <span class="hljs-string">"rxjs/operators"</span>;
 
 setUpdateIntervalForType(SensorTypes.accelerometer, <span class="hljs-number">400</span>); <span class="hljs-comment">// defaults to 100ms</span>
 
-<span class="hljs-keyword">const</span> subscription = accelerometer
-  .pipe(map(<span class="hljs-function">(<span class="hljs-params">{ x, y, z }</span>) =&gt;</span> x + y + z), filter(<span class="hljs-function"><span class="hljs-params">speed</span> =&gt;</span> speed &gt; <span class="hljs-number">20</span>))
-  .subscribe(
-    <span class="hljs-function"><span class="hljs-params">speed</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`You moved your phone with <span class="hljs-subst">${speed}</span>`</span>),
-    error =&gt; {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The sensor is not available"</span>);
-    }
-  );
+<span class="hljs-keyword">const</span> subscription = accelerometer.pipe(map(<span class="hljs-function">(<span class="hljs-params">{ x, y, z }</span>) =&gt;</span> x + y + z), filter(<span class="hljs-function"><span class="hljs-params">speed</span> =&gt;</span> speed &gt; <span class="hljs-number">20</span>)).subscribe(
+  <span class="hljs-function"><span class="hljs-params">speed</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`You moved your phone with <span class="hljs-subst">${speed}</span>`</span>),
+  error =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The sensor is not available"</span>);
+  }
+);
 
 setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
   <span class="hljs-comment">// If it's the last subscription to accelerometer it will stop polling in the native API</span>
