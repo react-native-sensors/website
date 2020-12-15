@@ -33,34 +33,64 @@ This means, to use a sensor you simply subscribe to it and you get updates with 
 <h2><a class="anchor" aria-hidden="true" id="accelerometer-observable-x-number-y-number-z-number-timestamp-string"></a><a href="#accelerometer-observable-x-number-y-number-z-number-timestamp-string" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>accelerometer: Observable&lt;{x: number, y: number, z: number, timestamp: string}&gt;</h2>
 <pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { accelerometer } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-native-sensors"</span>;
 
-<span class="hljs-keyword">const</span> subscription = accelerometer.subscribe(<span class="hljs-function">(<span class="hljs-params">{ x, y, z, timestamp }</span>) =&gt;</span>
-  <span class="hljs-built_in">console</span>.log({ x, y, z, timestamp })
-);
+<span class="hljs-keyword">const</span> subscription = accelerometer.subscribe(<span class="hljs-function">(<span class="hljs-params">{ x, y, z, timestamp }</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log({ x, y, z, timestamp }));
 </code></pre>
 <p>It might be interesting to note that the gravity of the earth is not removed from the sensoric values.
 Dependening on the position of the phone you will need to substract this from the values if you are interested in the raw values.</p>
 <h2><a class="anchor" aria-hidden="true" id="gyroscope-observable-x-number-y-number-z-number-timestamp-string"></a><a href="#gyroscope-observable-x-number-y-number-z-number-timestamp-string" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>gyroscope: Observable&lt;{x: number, y: number, z: number, timestamp: string}&gt;</h2>
 <pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { gyroscope } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-native-sensors"</span>;
 
-<span class="hljs-keyword">const</span> subscription = gyroscope.subscribe(<span class="hljs-function">(<span class="hljs-params">{ x, y, z, timestamp }</span>) =&gt;</span>
-  <span class="hljs-built_in">console</span>.log({ x, y, z, timestamp })
-);
+<span class="hljs-keyword">const</span> subscription = gyroscope.subscribe(<span class="hljs-function">(<span class="hljs-params">{ x, y, z, timestamp }</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log({ x, y, z, timestamp }));
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="magnetometer-observable-x-number-y-number-z-number-timestamp-string"></a><a href="#magnetometer-observable-x-number-y-number-z-number-timestamp-string" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>magnetometer: Observable&lt;{x: number, y: number, z: number, timestamp: string}&gt;</h2>
 <pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { magnetometer } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-native-sensors"</span>;
 
-<span class="hljs-keyword">const</span> subscription = magnetometer.subscribe(<span class="hljs-function">(<span class="hljs-params">{ x, y, z, timestamp }</span>) =&gt;</span>
-  <span class="hljs-built_in">console</span>.log({ x, y, z, timestamp })
-);
+<span class="hljs-keyword">const</span> subscription = magnetometer.subscribe(<span class="hljs-function">(<span class="hljs-params">{ x, y, z, timestamp }</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log({ x, y, z, timestamp }));
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="barometer-observable-pressure-number"></a><a href="#barometer-observable-pressure-number" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>barometer: Observable&lt;{pressure: number}&gt;</h2>
 <pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { barometer } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-native-sensors"</span>;
 
-<span class="hljs-keyword">const</span> subscription = barometer.subscribe(<span class="hljs-function">(<span class="hljs-params">{ pressure }</span>) =&gt;</span>
-  <span class="hljs-built_in">console</span>.log({ pressure })
-);
+<span class="hljs-keyword">const</span> subscription = barometer.subscribe(<span class="hljs-function">(<span class="hljs-params">{ pressure }</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log({ pressure }));
 </code></pre>
 <p>Please note that this sensor has no option to set the update rate.</p>
+<h2><a class="anchor" aria-hidden="true" id="orientation-observable-qx-number-qy-number-qz-number-qw-number-pitch-number-roll-number-yaw-number-timestamp-string"></a><a href="#orientation-observable-qx-number-qy-number-qz-number-qw-number-pitch-number-roll-number-yaw-number-timestamp-string" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>orientation: Observable&lt;{qx: number, qy: number, qz: number, qw: number, pitch: number, roll: number, yaw: number, timestamp: string}&gt;</h2>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { orientation } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-native-sensors"</span>;
+
+<span class="hljs-keyword">const</span> subscription = orientation.subscribe(<span class="hljs-function">(<span class="hljs-params">{ qx, qy, qz, qw, pitch, roll, yaw, timestamp }</span>) =&gt;</span>
+  <span class="hljs-built_in">console</span>.log({ qx, qy, qz, qw, pitch, roll, yaw, timestamp })
+);
+</code></pre>
+<p>qx, qy, qz, qw are quaternion values.
+pitch, roll, yaw are calculated by iOS/Android. (Yaw is called Azimuth in Android documentation)</p>
+<p>Note: reference frame for iOS is different from Android. Check Apple's and Google documentation.</p>
+<p><a href="https://developer.apple.com/documentation/coremotion/getting_processed_device-motion_data/understanding_reference_frames_and_device_attitude?language=objc">iOS - Understanding Reference Frames and Device Attitude</a></p>
+<p><a href="https://developer.android.com/guide/topics/sensors/sensors_motion#sensors-motion-rotate">Android - Use the rotation vector sensor</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Quaternion">Quaternion</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation">Quaternions and spatial rotation</a></p>
+<p>Example how to convert quaternion to Euler angles:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">quaternionToAngles</span>(<span class="hljs-params">q</span>) </span>{
+  <span class="hljs-keyword">let</span> data = q;
+
+  <span class="hljs-keyword">let</span> ysqr = data.y * data.y;
+  <span class="hljs-keyword">let</span> t0 = <span class="hljs-number">-2.0</span> * (ysqr + data.z * data.z) + <span class="hljs-number">1.0</span>;
+  <span class="hljs-keyword">let</span> t1 = +<span class="hljs-number">2.0</span> * (data.x * data.y + data.w * data.z);
+  <span class="hljs-keyword">let</span> t2 = <span class="hljs-number">-2.0</span> * (data.x * data.z - data.w * data.y);
+  <span class="hljs-keyword">let</span> t3 = +<span class="hljs-number">2.0</span> * (data.y * data.z + data.w * data.x);
+  <span class="hljs-keyword">let</span> t4 = <span class="hljs-number">-2.0</span> * (data.x * data.x + ysqr) + <span class="hljs-number">1.0</span>;
+
+  t2 = t2 &gt; <span class="hljs-number">1.0</span> ? <span class="hljs-number">1.0</span> : t2;
+  t2 = t2 &lt; <span class="hljs-number">-1.0</span> ? <span class="hljs-number">-1.0</span> : t2;
+
+  <span class="hljs-keyword">const</span> toDeg = <span class="hljs-number">180</span> / <span class="hljs-built_in">Math</span>.PI;
+
+  <span class="hljs-keyword">const</span> euler = {};
+  euler.pitch = <span class="hljs-built_in">Math</span>.asin(t2) * toDeg;
+  euler.roll = <span class="hljs-built_in">Math</span>.atan2(t3, t4) * toDeg;
+  euler.yaw = <span class="hljs-built_in">Math</span>.atan2(t1, t0) * toDeg;
+
+  <span class="hljs-keyword">return</span> euler;
+}
+</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="setupdateintervalfortypetype-string-interval-number"></a><a href="#setupdateintervalfortypetype-string-interval-number" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setUpdateIntervalForType(type: string, interval: number)</h2>
 <p>As the sensors are global we can only set the rate in which the hardware is read globally.
 Please note that the native platforms treat this more as a recommendation than an exact value.</p>
